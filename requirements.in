@@ -1,0 +1,10 @@
+numpy
+pandas
+matplotlib
+shapely
+fiona
+pyproj
+geopandas
+rasterio
+pre-commit
+jupyterlab

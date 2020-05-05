@@ -1,0 +1,13 @@
+repos:
+  - repo: https://github.com/thinkingmachines/coding-style
+    rev: 8afcfe2cdc488cc0e1c6652d30d59bfc008c752a
+    hooks:
+      - id: black
+      - id: flake8
+      - id: isort
+      - id: black-nb
+        additional_dependencies:
+          - 'black-nb'
+      - id: flake8-nb
+        additional_dependencies:
+          - 'flake8_nb'

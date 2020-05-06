@@ -8,3 +8,4 @@ geopandas
 rasterio
 pre-commit
 jupyterlab
+wget

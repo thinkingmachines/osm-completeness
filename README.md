@@ -1,13 +1,11 @@
 <p align="center">
-<b><a href="#installation">Installation</a></b>
+<b><a href="#setup">Setup</a></b>
 |
 <b><a href="#usage">Usage</a></b>
 |
-<b><a href="#code-organization">Code Organization</a></b>
-|
-<b><a href="#method">Method</a></b>
-|
 <b><a href="#data-sources">Data Sources</a></b>
+|
+<b><a href="#code-organization">Code Organization</a></b>
 |
 <b><a href="#citation">Citation</a></b>
 |
@@ -18,17 +16,16 @@
 
 # Measuring OpenStreetMap building footprint completeness using human settlement layers
 
-This repository provides the methodology and analysis for the paper "Measuring
-OpenStreetMap building footprint completeness using human settlement layers".
+This repository provides the methodology and analysis for the paper "Measuring OpenStreetMap building footprint completeness using human settlement layers".
 
 Geographic data is essential in supporting efforts for disaster risk reduction and preparedness. The goal of this project is to study OpenStreetMap data completeness to identify unmapped regions. This initiative helps OSM volunteers focus their attention on specific areas. In this study, we use human settlements data to measure the data completeness of OSM building footprints.
 
-![osm image](/osm.jpg)
-Last 2019, we visualize the levels of [OpenStreetMap completeness](https://stories.thinkingmachin.es/mapthegap/) across the country through an [interactive map](https://mapthegap.thinkingmachin.es/?_ga=2.39089123.1314905635.1593494157-1657796981.1591263732) using Mapbox tools.  
+![osm image](/assets/osm.jpg)
+Last 2019, we visualized the levels of [OpenStreetMap completeness](https://stories.thinkingmachin.es/mapthegap/) across the country through an [interactive map](https://mapthegap.thinkingmachin.es/) using Mapbox tools.  
 
-## Installation
+## Setup
 
-Create a virtual environment and install the requirements.
+Create a Python virtual environment and install the dependencies found in `requirements.txt`.
 
 ### Ubuntu/Debian
 ```
@@ -42,11 +39,8 @@ venv\Scripts\activate
 pip install pip-tools
 pip install -r requirements.txt
 ```
-This part creates a virtual environment, `venv`, and installs dependencies found in `requirement.txt`.
 
 ## Usage
-
-To run the notebook inside `venv` using jupyter, do the following commands
 
 1. Activate your virtual environment
 
@@ -63,65 +57,59 @@ venv\Scripts\activate
 2. Run JupyterLab
 ```
 jupyter lab
-
 ```
 
 ## Data Sources
 
-We have three sources of the Philippines and Madagascar datasets.
+We have three sources of GIS data for the Philippines and Madagascar.
 
-* High Resolution Settlement Layer (HRSL) 
-    * a high resolution population dataset obtained form satellite imagery 
+* High Resolution Settlement Layer (HRSL) - high resolution population dataset from Facebook Data for Good  
     * [Philippines](https://data.humdata.org/dataset/philippines-high-resolution-population-density-maps-demographic-estimates) 
     * [Madagascar](https://data.humdata.org/dataset/highresolutionpopulationdensitymaps-mdg)
-* Administrative Boundaries 
-    * derived from the boundaries of location through government units
-    * [Philippines](https://data.humdata.org/dataset/philippines-administrative-levels-0-to-3) 
+* Administrative Boundaries - administrative division/unit/boundary from Humanitarian Data Exchange (HDX)
+    * [Philippines Level 1 to 3](https://data.humdata.org/dataset/philippines-administrative-levels-0-to-3) 
+    * [Philippines Level 4](https://storage.googleapis.com/osm-completeness-thinkingmachines/phl_adm_2015_level4_barangay.gpkg.zip)
     * [Madagascar](https://data.humdata.org/dataset/madagascar-administrative-level-0-4-boundaries)
-* OpenStreetMap (OSM) 
-    * free wiki world map
-    * [Philippines](https://download.geofabrik.de/asia/philippines.html) 
+* OpenStreetMap (OSM) - free wiki world map
+    * [Philippines January 2020](https://storage.googleapis.com/osm-completeness-thinkingmachines/phl_osm_jan_2020_buildings.gpkg.zip)
+    * [Madagascar January 2020](https://storage.googleapis.com/osm-completeness-thinkingmachines/mdg_osm_jan_2020_buildings.gpkg.zip)
+    * [Philippines](https://download.geofabrik.de/asia/philippines.html)
     * [Madagascar](https://download.geofabrik.de/africa/madagascar.html)
 
 ## Code Organization
 
-To be able to follow the process we've done, it is advised to go through the notebooks one-by-one.
-
-The repository contains:
+Upon cloning, the repository contains the following directories:
 
 * **notebooks/** - has all Jupyter notebook for methodology and analysis
-    * [1_methodology.ipynb](https://github.com/thinkingmachines/osm-completeness/blob/master/notebooks/1_Methodology.ipynb) - shows the methodology of the project: importing the packages, downloading the datasets
-    * [2_anlysis.ipynb](https://github.com/thinkingmachines/osm-completeness/blob/master/notebooks/2_Analysis.ipynb) - shows the analysis of the project: importing the packages, identifying urban or rural unmapped areas
+    * [1_Methodology.ipynb](https://github.com/thinkingmachines/osm-completeness/blob/master/notebooks/1_Methodology.ipynb) - shows the methodology of the project: importing the packages, downloading the datasets
+    * [2_Analysis.ipynb](https://github.com/thinkingmachines/osm-completeness/blob/master/notebooks/2_Analysis.ipynb) - shows the analysis of the project: importing the packages, identifying urban or rural unmapped areas
+* **assets/** - images used for the readme
 
+After running the notebooks from top-to-bottom and in order, the repository should have these new directories:
 
-
-## Method 
-
-We processed the data in three steps:
-
-1. The human settlement layer was converted into a vector.
-2. We performed a spatial join to find the intersection between the vectorized human settlement layer and the OSM building footprints.
-3. The data completeness was calculated based on areas from the vectorized human settlement layer that intersect with the building footprints.
-
+* **download_data/** - raw and intermediately processed datasets
+* **data/** - processed datasets for analysis
 
 ## Citation
-Use this bibtex to cite this repository:
+
+You can use this bibtex entry to cite this repository:
 
 ```
 @misc{osm_completeness_2020,
   title={Measuring OpenStreetMap building footprint completeness using human settlement layers},
-  author={Flores, Ren Avell and Orden, Ardie and Faustino, Pia and Samson, Mark Steve},
+  author={Orden, Ardie and Flores, Ren Avell and Faustino, Pia and Samson, Mark Steve},
   year={2020},
-  publisher={Github},
-  journal={GitHub repository},
+  publisher={GitHub},
+  journal={GitHub Repository},
   howpublished={\url{https://github.com/thinkingmachines/osm-completeness}},
 }
 ```
 ## Acknowledgement 
 
-This project was supported by [Humanitarian OpenStreetMap Team (HOT)](https://www.hotosm.org/) and [Philippine OpenStreeMap](https://www.openstreetmap.org/relation/443174#map=6/10.714/123.710).
+We'd like to thank Nick Brown from [Humanitarian OpenStreetMap Team (HOT)](https://www.hotosm.org/) and Mikel Maron from the [Mapbox community team](https://www.mapbox.com/community/) for their feedback and support.
 
-Geographic visuals was made possible by [Mapbox](https://www.mapbox.com/).
+We'd also like to thank the [OpenStreetMap Philippines](https://www.facebook.com/OSMPH) community for their support and all their contributions to the map.
+
 
 ## License
 

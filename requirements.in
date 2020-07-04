@@ -9,3 +9,4 @@ rasterio
 pre-commit
 jupyterlab
 wget
+scipy

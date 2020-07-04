@@ -18,10 +18,10 @@
 
 This repository provides the methodology and analysis for the paper "Measuring OpenStreetMap building footprint completeness using human settlement layers".
 
-Geographic data is essential in supporting efforts for disaster risk reduction and preparedness. The goal of this project is to study OpenStreetMap data completeness to identify unmapped regions. This initiative helps OSM volunteers focus their attention on specific areas. In this study, we use human settlements data to measure the data completeness of OSM building footprints.
+Geographic data is essential in supporting efforts for disaster risk reduction and preparedness. The goal of this project is to find the unmapped areas in OpenStreetMap. This will help OSM volunteers save time by focusing their efforts on specific areas. In this study, we use human settlements data to measure the data completeness of OSM building footprints.
 
-![osm image](/assets/osm.jpg)
-Last 2019, we visualized the levels of [OpenStreetMap completeness](https://stories.thinkingmachin.es/mapthegap/) across the country through an [interactive map](https://mapthegap.thinkingmachin.es/) using Mapbox tools.  
+![osm image](/assets/mapthegap.jpg)
+We also created an [interactive web map](https://mapthegap.thinkingmachin.es/) and we wrote a [blog](https://stories.thinkingmachin.es/mapthegap/) to show the results in the Philippines.
 
 ## Setup
 
@@ -89,6 +89,7 @@ After running the notebooks from top-to-bottom and in order, the repository shou
 
 * **download_data/** - raw and intermediately processed datasets
 * **data/** - processed datasets for analysis
+* **plots/** - plots from analysis
 
 ## Citation
 

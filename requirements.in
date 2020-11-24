@@ -10,3 +10,4 @@ pre-commit
 jupyterlab
 wget
 scipy
+notebook>=6.1.5

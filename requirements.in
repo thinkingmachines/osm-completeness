@@ -11,3 +11,5 @@ jupyterlab
 wget
 scipy
 notebook>=6.1.5
+
+bleach>=3.3.0

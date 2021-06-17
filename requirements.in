@@ -1,15 +1,10 @@
 numpy
 pandas
 matplotlib
-shapely
-fiona
-pyproj
 geopandas
 rasterio
 pre-commit
 jupyterlab
 wget
 scipy
-notebook>=6.1.5
-
-bleach>=3.3.0
+notebook

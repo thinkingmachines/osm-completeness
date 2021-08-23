@@ -39,14 +39,14 @@ cfgv==3.3.0
     # via pre-commit
 chardet==4.0.0
     # via requests
-click-plugins==1.1.1
-    # via
-    #   fiona
-    #   rasterio
 click==8.0.1
     # via
     #   click-plugins
     #   cligj
+    #   fiona
+    #   rasterio
+click-plugins==1.1.1
+    # via
     #   fiona
     #   rasterio
 cligj==0.7.2
@@ -77,16 +77,16 @@ idna==2.10
     #   requests
 ipykernel==5.5.5
     # via notebook
+ipython==7.24.1
+    # via
+    #   ipykernel
+    #   jupyterlab
 ipython-genutils==0.2.0
     # via
     #   jupyter-server
     #   nbformat
     #   notebook
     #   traitlets
-ipython==7.24.1
-    # via
-    #   ipykernel
-    #   jupyterlab
 jedi==0.18.0
     # via ipython
 jinja2==3.0.1
@@ -121,20 +121,20 @@ jupyter-server==1.8.0
     #   jupyterlab
     #   jupyterlab-server
     #   nbclassic
+jupyterlab==3.0.16
+    # via -r requirements.in
 jupyterlab-pygments==0.1.2
     # via nbconvert
 jupyterlab-server==2.6.0
     # via jupyterlab
-jupyterlab==3.0.16
-    # via -r requirements.in
 kiwisolver==1.3.1
     # via matplotlib
 markupsafe==2.0.1
     # via jinja2
-matplotlib-inline==0.1.2
-    # via ipython
 matplotlib==3.4.2
     # via -r requirements.in
+matplotlib-inline==0.1.2
+    # via ipython
 mistune==0.8.4
     # via nbconvert
 munch==2.5.0
@@ -157,7 +157,7 @@ nest-asyncio==1.5.1
     # via nbclient
 nodeenv==1.6.0
     # via pre-commit
-notebook==6.4.0
+notebook==6.4.1
     # via
     #   -r requirements.in
     #   nbclassic

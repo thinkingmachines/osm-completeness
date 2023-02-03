@@ -28,4 +28,4 @@ metadata:
 spec:
   type: open-source
   lifecycle: production
-  owner: thinkingmachines/tm-jc-nacpil
+  owner: user:default/tm-jc-nacpil

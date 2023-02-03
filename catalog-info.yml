@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: osm-completeness
+  title: OSM Completeness
+  description: Measuring OpenStreetMap building footprint completeness using human settlement layers.
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: thinkingmachines/osm-completeness
+  links:
+    - url: https://thinkdatasci.slack.com/archives/CC7SY9BDH
+      title: Slack - Main Channel
+      icon: chat
+    - url: https://mapthegap.thinkingmachin.es/
+      title: Map The Gap website (Philippines)
+      icon: dashboard
+    - url: https://mapthegap-madagascar.web.app/
+      title: Map The Gap website (Madagascar)
+      icon: dashboard
+    - url: https://twitter.com/thinkdatasci/status/1479407588206915588
+      title: Data Story with OpFistula and MapBox
+      icon: docs
+  tags:
+    - geo-analytics
+    - web-map
+    - web-app
+    - geo-ai
+spec:
+  type: open-source
+  lifecycle: production
+  owner: thinkingmachines/tm-jc-nacpil
